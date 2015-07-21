@@ -39,7 +39,7 @@ $thread_owner = false;
         
         mysql_free_result($result);
 
-        if ( $msg_status != 1 /* || $reply_closed */ || !can_edit_post($auth_id, $created, $user_id, $msg_id)) { 
+        if ( $msg_status != 1 /* || $reply_closed */ || !can_edit_post($auth_id, $user_id)) { 
           header('Location: ' . $root_dir . $page_msg . '?id=' . $msg_id, TRUE, 302); 
           die('Failed to edit the message. Message is not yours, has been answered or deleted/censored. Better luck next time!');
         }

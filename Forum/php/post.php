@@ -86,7 +86,7 @@ require_once('dump.php');
                       (!is_null($row['thread_closed']) && $row['thread_closed'] > 0 )) {
                         $closed = true;
                     }
-                    if ( $closed || $row['status'] != 1 || !can_edit_post($row['author'], $row['created'], $user_id, $msg_id)) {
+                    if ( $closed || $row['status'] != 1 || !can_edit_post($row['author'], $user_id)) {
                         die('Modifications to this post are not allowed.');
                     }
                     if (strcmp($old_subject, $subj) != 0 || strcmp($old_body, $new_body) != 0) {

@@ -163,7 +163,7 @@ Closed |
        print('<a target="bottom" href="' . $root_dir . $page_msg . '?id=' . $msg_id . '&action=closethread">Close Thread</a>');
      } 
    }
-   if (!$reply_closed && can_edit_post($auth_id, $created_ts, $user_id, $msg_id)) {
+   if (!$reply_closed && can_edit_post($auth_id, $user_id)) {
      print(" | ");
      if (!is_null($parent) && $parent != 0) {
          print('<a target="bottom" href="' . $root_dir . $page_new . '?id=' . $msg_id . '?&re=' . $parent . '">Edit</a>');
